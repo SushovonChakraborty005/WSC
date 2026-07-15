@@ -1,0 +1,450 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#eceff1;
+}
+
+.container{
+
+    width:100%;
+    max-width:900px;
+    height:95vh;
+
+    margin:20px auto;
+
+    background:white;
+
+    border-radius:15px;
+
+    box-shadow:0 0 20px rgba(0,0,0,.15);
+
+    display:flex;
+
+    flex-direction:column;
+
+    overflow:hidden;
+
+}
+
+.container h1{
+
+    background:#1976d2;
+
+    color:white;
+
+    text-align:center;
+
+    padding:18px;
+
+    font-size:28px;
+
+}
+
+.chat-box{
+
+    flex:1;
+
+    padding:20px;
+
+    overflow-y:auto;
+
+    background:#f7f7f7;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+/*==========================
+    Message Row
+==========================*/
+
+.message-row{
+
+    display:flex;
+
+    align-items:flex-end;
+
+    gap:12px;
+
+    animation:fadeIn .25s ease;
+
+}
+
+.user-row{
+
+    justify-content:flex-end;
+
+}
+
+.bot-row{
+
+    justify-content:flex-start;
+
+}
+
+/*==========================
+      Avatar
+==========================*/
+
+.avatar{
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:2px solid white;
+
+    box-shadow:0 3px 8px rgba(0,0,0,.2);
+
+    flex-shrink:0;
+
+    transition:.3s;
+
+}
+
+.avatar:hover{
+
+    transform:scale(1.08);
+
+}
+
+/*==========================
+    User Bubble
+==========================*/
+
+.user-message{
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:14px 18px;
+
+    border-radius:20px 20px 5px 20px;
+
+    max-width:70%;
+
+    line-height:1.6;
+
+    word-break:break-word;
+
+    box-shadow:0 5px 15px rgba(37,99,235,.25);
+
+    transition:.25s;
+
+}
+
+.user-message:hover{
+
+    transform:translateY(-2px);
+
+}
+
+/*==========================
+      Bot Bubble
+==========================*/
+
+.bot-message{
+
+    background:white;
+
+    color:#222;
+
+    padding:14px 18px;
+
+    border-radius:20px 20px 20px 5px;
+
+    max-width:70%;
+
+    line-height:1.6;
+
+    word-break:break-word;
+
+    border:1px solid #ececec;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+
+    transition:.25s;
+
+}
+
+.bot-message:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.bot-message hr{
+
+    margin:12px 0;
+
+    border:none;
+
+    border-top:1px solid #ddd;
+
+}
+
+.bot-message small{
+
+    display:block;
+
+    margin-top:8px;
+
+    color:#555;
+
+    font-size:13px;
+
+    line-height:1.5;
+
+    word-break:break-word;
+
+}
+
+.user-message strong,
+.bot-message strong{
+
+    display:inline-block;
+
+    margin-bottom:8px;
+
+}
+
+/*==========================
+     Input Area
+==========================*/
+
+.input-area{
+
+    display:flex;
+
+    gap:10px;
+
+    padding:18px;
+
+    background:white;
+
+    border-top:1px solid #ddd;
+
+}
+
+.input-area input{
+
+    flex:1;
+
+    padding:14px;
+
+    border:1px solid #ccc;
+
+    border-radius:10px;
+
+    font-size:16px;
+
+    outline:none;
+
+}
+
+.input-area input:focus{
+
+    border-color:#1976d2;
+
+}
+
+.input-area button{
+
+    width:120px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#1976d2;
+
+    color:white;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.input-area button:hover{
+
+    background:#1258a8;
+
+}
+
+.input-area button:disabled{
+
+    background:gray;
+
+    cursor:not-allowed;
+
+}
+
+button:active{
+
+    transform:scale(.96);
+
+}
+
+/*==========================
+     Upload Area
+==========================*/
+
+.upload-area{
+
+    padding:15px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    background:white;
+
+    border-bottom:1px solid #ddd;
+
+}
+
+.upload-area button{
+
+    padding:10px 20px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#43a047;
+
+    color:white;
+
+    cursor:pointer;
+
+}
+
+.upload-area button:hover{
+
+    background:#2e7d32;
+
+}
+
+.upload-area p{
+
+    color:green;
+
+    font-weight:bold;
+
+}
+
+/*==========================
+      Scrollbar
+==========================*/
+
+.chat-box::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+.chat-box::-webkit-scrollbar-thumb{
+
+    background:#bdbdbd;
+
+    border-radius:20px;
+
+}
+
+/*==========================
+     Animation
+==========================*/
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(10px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+.bot-message {
+    text-align: left;
+    line-height: 1.7;
+}
+
+.bot-message h1,
+.bot-message h2,
+.bot-message h3,
+.bot-message h4,
+.bot-message h5,
+.bot-message h6 {
+    text-align: left;
+    margin: 16px 0 10px;
+    color: #222;
+}
+
+.bot-message p {
+    margin: 10px 0;
+    text-align: left;
+}
+
+.bot-message ul,
+.bot-message ol {
+    margin: 12px 0;
+    padding-left: 25px;
+    text-align: left;
+}
+
+.bot-message li {
+    margin: 8px 0;
+}
+
+.bot-message pre {
+    background: #1e1e1e;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    overflow-x: auto;
+    margin: 15px 0;
+}
+
+.bot-message code {
+    font-family: Consolas, monospace;
+}
+
+.bot-message strong {
+    font-weight: bold;
+}
+
+.bot-message blockquote {
+    border-left: 4px solid #1976d2;
+    padding-left: 15px;
+    color: gray;
+    margin: 15px 0;
+}
